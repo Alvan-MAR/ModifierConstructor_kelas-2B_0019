@@ -41,10 +41,19 @@ public class Produk {
         }
     }
 
-    // public void tampilkanInfo() {
-    //     System.out.println("Nama Produk: " + nama);
-    //     System.out.println("Harga: " + harga);
-    //     System.out.println("Stok: " + stok);
-    //     System.out.println("-------------------------");
-    // }
+    public void kurangiStok(int jumlah) {
+        if (jumlah > stok){
+            System.out.println("Melebihi stok");
+        }
+        else{
+            stok = stok - jumlah;
+        }
+    }
+
+    public void tampilkanInfo() {
+        System.out.println("Nama Produk: " + nama);
+        System.out.println("Harga: " + harga);
+        System.out.println("Stok: " + stok);
+        System.out.println("-------------------------");
+    }
 }
