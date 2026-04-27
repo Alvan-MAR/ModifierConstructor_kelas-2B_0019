@@ -52,8 +52,23 @@ public class Produk {
 
     public void tampilkanInfo() {
         System.out.println("Nama Produk: " + nama);
-        System.out.println("Harga: " + harga);
+        System.out.printf("Harga: Rp.%.0f,00%n", harga);
         System.out.println("Stok: " + stok);
-        System.out.println("-------------------------");
+    }
+
+        public double hitungTotalHarga(int jumlah) {
+        return harga * jumlah;
+    }
+
+    public void beli(int jumlahBeli){
+        if (jumlahBeli <= 0){
+            System.out.println("Jumlah beli harus lebih dari 0!");
+            return;
+        }
+        if (jumlahBeli > stok){
+            System.out.println("Stock" + nama + "Tidak cuku! Tersisa: " + stok);
+            return;
+        }
+        stok -= jumlahBeli;
     }
 }
