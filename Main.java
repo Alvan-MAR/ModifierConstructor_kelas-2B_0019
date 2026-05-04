@@ -102,6 +102,11 @@ public class Main {
         System.out.printf("Diskon: Rp.%.0f,00%n", minuman.hitungPajak(jumlahBeli,15));
         System.out.printf("Total: Rp.%.0f,00%n", minuman.hitungTotalSemua(jumlahBeli,15,7));
         System.out.println("-------------------------");
+
+        //Transaksi
+        elektronik.beli(10);
+        makanan.beli(15);
+        minuman.beli(3);
     }
     
 }
