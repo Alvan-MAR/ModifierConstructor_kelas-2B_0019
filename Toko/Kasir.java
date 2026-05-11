@@ -13,12 +13,14 @@ public class Kasir {
     public void prosesTransaksi(Produk produk, int jumlah) {
         System.out.println("=== Transaksi oleh Kasir: " + namaKasir + " ===");
 
-        produk.beli(jumlah);
         produk.tampilkanInfo(); 
+        produk.beli(jumlah);
         
         
         double total = produk.hitungTotalHarga(jumlah);
+        System.out.println("Jumlah yang dibeli: " + jumlah);
         System.out.printf("Total Biaya: Rp.%.0f,00%n", total);
+        System.out.println("Sisa Stok: " + produk.getStok());
         System.out.println("========================================\n");
     }
 }
