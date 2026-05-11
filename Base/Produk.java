@@ -1,6 +1,6 @@
 package Base;
 
-public class Produk {
+public abstract class Produk {
     private String nama = "Produk A";
     private double harga;
     private int stok;
@@ -71,4 +71,7 @@ public class Produk {
         }
         stok -= jumlahBeli;
     }
+
+    public abstract double hitungPajak(int jumlahBeli);
+    public abstract double hitungDiskon(int jumlahBeli);
 }

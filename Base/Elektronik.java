@@ -10,10 +10,13 @@ public class Elektronik extends Produk{
         this.merek = merek;
     }
 
-    public void tampilkanData(){
+        @Override
+    public void tampilkanInfo(){
         super.tampilkanInfo();
         System.out.println("Masa Garansi: " + masaGaransi + " Tahun");
+        System.out.println("Merek: " + merek);
         System.out.println("-------------------------");
+
     }
 
     public int getMasaGaransi(){
@@ -37,15 +40,8 @@ public class Elektronik extends Produk{
         this.merek = merek;
     }
 
-        @Override
-    public void tampilkanInfo(){
-        super.tampilkanInfo();
-        System.out.println("Masa Garansi: " + masaGaransi + " Tahun");
-        System.out.println("Merek: " + merek);
-        System.out.println("-------------------------");
-
-    }
     //versi 1 - pajak PPN tetap
+    @Override
     public double hitungPajak(int jumlahBeli){
         return hitungTotalHarga(jumlahBeli) * PPN;
     }
@@ -65,6 +61,7 @@ public class Elektronik extends Produk{
 
     //overloading
     //versi 1 - diskon otomatis jika beli >= 10
+    @Override
     public double hitungDiskon(int jumlahBeli){
         if (jumlahBeli >= 10){
             return hitungTotalHarga(jumlahBeli) * 0.05;

@@ -10,7 +10,8 @@ public class Makanan extends Produk{
         this.kategori = kategori;
     }
 
-    public void tampilkanData(){
+    @Override
+    public void tampilkanInfo(){
         super.tampilkanInfo();
         System.out.println("Masa Expired: " + expiredDate + " Hari");
         System.out.println("Kategori: " + kategori);
@@ -39,6 +40,7 @@ public class Makanan extends Produk{
     }
 
     //versi 1 - pajak PPN tetap
+    @Override
     public double hitungPajak(int jumlahBeli){
         return hitungTotalHarga(jumlahBeli) * PPN;
     }
@@ -58,6 +60,7 @@ public class Makanan extends Produk{
 
     //overloading
     //versi 1 - diskon otomatis jika beli >= 10
+    @Override
     public double hitungDiskon(int jumlahBeli){
         if (jumlahBeli >= 10){
             return hitungTotalHarga(jumlahBeli) * 0.05;
