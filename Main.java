@@ -2,6 +2,7 @@ import Base.Elektronik;
 import Base.Makanan;
 import Base.Minuman;
 import Base.Produk;
+import Toko.Kasir;
 
 public class Main {
     public static void main(String[] args) {
@@ -90,10 +91,22 @@ public class Main {
         System.out.printf("Total: Rp.%.0f,00%n", totalMinuman);
         System.out.println("-------------------------");
 
-        // Transaksi beli
+        //Transaksi beli
         System.out.println("====== Pembelian ======");
         elektronik.beli(1);
         makanan.beli(4);
         minuman.beli(2);
+        elektronik.tampilkanInfo();
+        makanan.tampilkanInfo();
+        minuman.tampilkanInfo();
+
+        //Polymorphism
+
+        Kasir kasir1 = new Kasir("Pasep");
+
+        //Transaksi dengan polymorphism
+        kasir1.prosesTransaksi(elektronik, 1);
+        kasir1.prosesTransaksi(makanan, 5);
+        kasir1.prosesTransaksi(minuman, 2);
     }
 }
